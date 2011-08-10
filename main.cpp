@@ -807,7 +807,7 @@ void draw_game()
 
 	// Draw game logo
 	if(cur_menu != 0)
-		stretch_sprite(backbuffer, title_text, 10,10, title_text->w*1.0,title_text->h*1.0);
+		stretch_sprite(backbuffer, title_text, SCREEN_W/2-title_text->w/2,10, title_text->w*1.0,title_text->h*1.0);
 
 	// Mouse cursor
 	thickline(backbuffer, mouse_x-7,mouse_y, mouse_x-3,mouse_y, 2, 255,255,255, false);
@@ -1579,22 +1579,31 @@ void action_shipselect()
 
 void create_main_menu()
 {
-	int y = 70;
-	int sp = 30;
-	add_window(50,y+20, SCREEN_W-100,165);
+	int y = 65;
+    const int WIN_WIDTH = 350;//SCREEN_W * 0.73f;
+    const int WIN_HEIGHT = SCREEN_H * 0.52f;
 
+    int numButtons = 5;
+	if(game_state == STATE_GAME) {
+        numButtons++;
+    }
+	int BUTTON_SPACING = WIN_HEIGHT / numButtons - 3;
+
+	add_window(SCREEN_W/2-WIN_WIDTH/2,y+20, WIN_WIDTH,WIN_HEIGHT);
+
+    y += 30;
 	int button_x = SCREEN_W/2 - 200/2;
 	if(game_state == STATE_GAME)
 	{
-		add_button(button_x,y+20, 200,24, "Resume Game", ACTION_RESUME);
-		y += 30;
+		add_button(button_x,y+BUTTON_SPACING, 200,24, "Resume Game", ACTION_RESUME);
+		y += BUTTON_SPACING;
 	}
-	add_button(button_x,y+30, 200,24, "New Game", ACTION_SHIPSELECT_STORY);
-	add_button(button_x,y+30+sp, 200,24, "Survival Mode", ACTION_SHIPSELECT_SURVIVAL);
-//	add_button(button_x,y+30+40*2, 200,24, "Infinite Dungeon", 0)->disabled = true;
-	add_button(button_x,y+30+sp*2, 200,24, "Game Options", ACTION_OPTIONS);
-	add_button(button_x,y+30+sp*3, 200,24, "Credits", ACTION_CREDITS);
-	add_button(button_x,y+30+sp*4, 200,24, "Exit", ACTION_EXIT);
+	add_button(button_x,y, 200,24, "New Game", ACTION_SHIPSELECT_STORY);
+	add_button(button_x,y+BUTTON_SPACING, 200,24, "Survival Mode", ACTION_SHIPSELECT_SURVIVAL);
+	add_button(button_x,y+BUTTON_SPACING, 200,24, "Infinite Dungeon", 0)->disabled = true;
+	add_button(button_x,y+BUTTON_SPACING*2, 200,24, "Game Options", ACTION_OPTIONS);
+	add_button(button_x,y+BUTTON_SPACING*3, 200,24, "Credits", ACTION_CREDITS);
+	add_button(button_x,y+BUTTON_SPACING*4, 200,24, "Exit", ACTION_EXIT);
 	cur_menu = 1;
 
 	add_window(10,SCREEN_H-55, SCREEN_W-20,45);
