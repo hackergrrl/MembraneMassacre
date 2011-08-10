@@ -440,7 +440,8 @@ bool init_game()
 	    set_gfx_mode(GFX_AUTODETECT, 480, 320, 0,0);
 	else
 		set_gfx_mode(GFX_AUTODETECT_WINDOWED, 480, 320, 0,0);
-	set_window_title("Membrane Massacre :: v2.0");
+		//set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0,0);
+	set_window_title("Membrane Massacre :: v2.5");
 
 	font2 = load_font("data/font.pcx", NULL, NULL);
     
@@ -1651,21 +1652,24 @@ void create_options_menu()
 
 void create_credits()
 {
+    const int WIN_WIDTH = 380;
+    int x = SCREEN_W/2 - WIN_WIDTH/2;
 	int y = 125;
-	add_window(120,90, 380,380);
+	add_window(x,90, WIN_WIDTH,380);
 
-	add_label(310, 110, "Credits", makecol(255,255,0));
-	add_label(310, 118, "___________", makecol(200,200,0));
-	add_label(310, 155, "Programming & Design", makecol(0,255,0));
-	add_label(310, 180, "Stephen \"HopeDagger\" Whitmore");
-	add_label(310, 225, "Music & Misc. Art", makecol(0,255,0));
-	add_label(310, 250, "Dean \"Draffurd\" Yeats");
-	add_label(310, 295, "Additional Art", makecol(0,255,0));
-	add_label(310, 320, "Mark \"Prinz Eugn\" Simpson");
-	add_label(310, 365, "Most Backgrounds & Sound Effects", makecol(0,255,0));
-	add_label(310, 390, "Google Image Search & findsounds.com");
+    x = SCREEN_W/2;
+	add_label(x, 110, "Credits", makecol(255,255,0));
+	add_label(x, 118, "___________", makecol(200,200,0));
+	add_label(x, 155, "Programming & Design", makecol(0,255,0));
+	add_label(x, 180, "Stephen \"HopeDagger\" Whitmore");
+	add_label(x, 225, "Music & Misc. Art", makecol(0,255,0));
+	add_label(x, 250, "Dean \"Draffurd\" Yeats");
+	add_label(x, 295, "Additional Art", makecol(0,255,0));
+	add_label(x, 320, "Mark \"Prinz Eugn\" Simpson");
+	add_label(x, 365, "Most Backgrounds & Sound Effects", makecol(0,255,0));
+	add_label(x, 390, "Google Image Search & findsounds.com");
 
-	add_button(200, 425, 220,25, "Return to Main Menu", ACTION_RETURNMENU);
+	add_button(SCREEN_W/2-220/2, 425, 220,25, "Return to Main Menu", ACTION_RETURNMENU);
 	cur_menu = 3;
 }
 
