@@ -18,7 +18,7 @@ DEFINES := -DSOLARIS
 endif
 
 INCDIR := ${INCDIR} `freetype-config --cflags`
-LIBS := ${LIBS} `allegro-config --libs` -lfreetype -lXrandr
+LIBS := ${LIBS} `allegro-config --libs`
 
 COMPILER = g++
 COMPILER_FLAGS = -ggdb ${DEFINES}
