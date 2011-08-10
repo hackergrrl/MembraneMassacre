@@ -1,0 +1,259 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC7C7B3511E81E3000EF7AF1 /* enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B2411E81E3000EF7AF1 /* enemy.cpp */; };
+		DC7C7B3611E81E3000EF7AF1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B2611E81E3000EF7AF1 /* main.cpp */; };
+		DC7C7B3711E81E3000EF7AF1 /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B2811E81E3000EF7AF1 /* map.cpp */; };
+		DC7C7B3811E81E3000EF7AF1 /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B2A11E81E3000EF7AF1 /* menu.cpp */; };
+		DC7C7B3911E81E3000EF7AF1 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B2C11E81E3000EF7AF1 /* player.cpp */; };
+		DC7C7B3A11E81E3000EF7AF1 /* sprites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B2F11E81E3000EF7AF1 /* sprites.cpp */; };
+		DC7C7B3B11E81E3000EF7AF1 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B3111E81E3000EF7AF1 /* utils.cpp */; };
+		DC7C7B3C11E81E3000EF7AF1 /* weapons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC7C7B3311E81E3000EF7AF1 /* weapons.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76FAF0486AB0100D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8DD76FB20486AB0100D96B5E /* MembraneMassacre */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MembraneMassacre; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7C7B2411E81E3000EF7AF1 /* enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = enemy.cpp; sourceTree = "<group>"; };
+		DC7C7B2511E81E3000EF7AF1 /* enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enemy.h; sourceTree = "<group>"; };
+		DC7C7B2611E81E3000EF7AF1 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DC7C7B2711E81E3000EF7AF1 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		DC7C7B2811E81E3000EF7AF1 /* map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = map.cpp; sourceTree = "<group>"; };
+		DC7C7B2911E81E3000EF7AF1 /* map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		DC7C7B2A11E81E3000EF7AF1 /* menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
+		DC7C7B2B11E81E3000EF7AF1 /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		DC7C7B2C11E81E3000EF7AF1 /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		DC7C7B2D11E81E3000EF7AF1 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		DC7C7B2E11E81E3000EF7AF1 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
+		DC7C7B2F11E81E3000EF7AF1 /* sprites.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sprites.cpp; sourceTree = "<group>"; };
+		DC7C7B3011E81E3000EF7AF1 /* sprites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sprites.h; sourceTree = "<group>"; };
+		DC7C7B3111E81E3000EF7AF1 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		DC7C7B3211E81E3000EF7AF1 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		DC7C7B3311E81E3000EF7AF1 /* weapons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = weapons.cpp; sourceTree = "<group>"; };
+		DC7C7B3411E81E3000EF7AF1 /* weapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weapons.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76FAD0486AB0100D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* MembraneMassacre */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = MembraneMassacre;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DC7C7B2411E81E3000EF7AF1 /* enemy.cpp */,
+				DC7C7B2511E81E3000EF7AF1 /* enemy.h */,
+				DC7C7B2611E81E3000EF7AF1 /* main.cpp */,
+				DC7C7B2711E81E3000EF7AF1 /* main.h */,
+				DC7C7B2811E81E3000EF7AF1 /* map.cpp */,
+				DC7C7B2911E81E3000EF7AF1 /* map.h */,
+				DC7C7B2A11E81E3000EF7AF1 /* menu.cpp */,
+				DC7C7B2B11E81E3000EF7AF1 /* menu.h */,
+				DC7C7B2C11E81E3000EF7AF1 /* player.cpp */,
+				DC7C7B2D11E81E3000EF7AF1 /* player.h */,
+				DC7C7B2E11E81E3000EF7AF1 /* resource.h */,
+				DC7C7B2F11E81E3000EF7AF1 /* sprites.cpp */,
+				DC7C7B3011E81E3000EF7AF1 /* sprites.h */,
+				DC7C7B3111E81E3000EF7AF1 /* utils.cpp */,
+				DC7C7B3211E81E3000EF7AF1 /* utils.h */,
+				DC7C7B3311E81E3000EF7AF1 /* weapons.cpp */,
+				DC7C7B3411E81E3000EF7AF1 /* weapons.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76FB20486AB0100D96B5E /* MembraneMassacre */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76FA90486AB0100D96B5E /* MembraneMassacre */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "MembraneMassacre" */;
+			buildPhases = (
+				8DD76FAB0486AB0100D96B5E /* Sources */,
+				8DD76FAD0486AB0100D96B5E /* Frameworks */,
+				8DD76FAF0486AB0100D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MembraneMassacre;
+			productInstallPath = "$(HOME)/bin";
+			productName = MembraneMassacre;
+			productReference = 8DD76FB20486AB0100D96B5E /* MembraneMassacre */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "MembraneMassacre" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* MembraneMassacre */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76FA90486AB0100D96B5E /* MembraneMassacre */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76FAB0486AB0100D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC7C7B3511E81E3000EF7AF1 /* enemy.cpp in Sources */,
+				DC7C7B3611E81E3000EF7AF1 /* main.cpp in Sources */,
+				DC7C7B3711E81E3000EF7AF1 /* map.cpp in Sources */,
+				DC7C7B3811E81E3000EF7AF1 /* menu.cpp in Sources */,
+				DC7C7B3911E81E3000EF7AF1 /* player.cpp in Sources */,
+				DC7C7B3A11E81E3000EF7AF1 /* sprites.cpp in Sources */,
+				DC7C7B3B11E81E3000EF7AF1 /* utils.cpp in Sources */,
+				DC7C7B3C11E81E3000EF7AF1 /* weapons.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB928608733DD80010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-L/opt/local/lib",
+					"-framework",
+					Cocoa,
+					"-lalleg-main",
+					"-lalleg",
+				);
+				PRODUCT_NAME = MembraneMassacre;
+			};
+			name = Debug;
+		};
+		1DEB928708733DD80010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = MembraneMassacre;
+			};
+			name = Release;
+		};
+		1DEB928A08733DD80010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/local/include/;
+				LIBRARY_SEARCH_PATHS = /opt/local/lib/;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-lalleg-main",
+					"-lalleg",
+				);
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB928B08733DD80010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "MembraneMassacre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB928608733DD80010E9CD /* Debug */,
+				1DEB928708733DD80010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "MembraneMassacre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB928A08733DD80010E9CD /* Debug */,
+				1DEB928B08733DD80010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
