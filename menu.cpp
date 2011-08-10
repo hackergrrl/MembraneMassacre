@@ -26,19 +26,19 @@ void update_mouse_hover(GUI *G)
 	if(!info_label)
 		return;
 	if(!G)
-		info_label->text = "Membrane Massacre v2.0  Copyright (c) 2006-2007";
+		strcpy(info_label->text, "Membrane Massacre v2.0  Copyright (c) 2006-2007");
 	else if(!strcmp(G->text,"Resume Game"))
-		info_label->text = "Continue your journey onward!";
+		strcpy(info_label->text, "Continue your journey onward!");
 	else if(!strcmp(G->text,"New Game"))
-		info_label->text = "Begin a new game in 'story' mode";
+		strcpy(info_label->text, "Begin a new game in 'story' mode");
 	else if(!strcmp(G->text,"Survival Mode"))
-		info_label->text = "Survive against hordes of cells to gain new ships and more..";
+		strcpy(info_label->text, "Survive against hordes of cells to gain new ships and more..");
 	else if(!strcmp(G->text,"Game Options"))
-		info_label->text = "Configure controls, graphics settings, and difficulty";
+		strcpy(info_label->text, "Configure controls, graphics settings, and difficulty");
 	else if(!strcmp(G->text,"Credits"))
-		info_label->text = "The fine folks who made Membrane Massacre possible";
+		strcpy(info_label->text, "The fine folks who made Membrane Massacre possible");
 	else if(!strcmp(G->text,"Exit"))
-		info_label->text = "Don't even THINK about it!";
+		strcpy(info_label->text, "Don't even THINK about it!");
 }
 
 
@@ -78,7 +78,7 @@ void draw_window(BITMAP *bmp, int x, int y, int w, int h, int col)
 }
 
 
-void draw_button(BITMAP *bmp, int x, int y, int w, int h, int col, char *txt, bool selected, bool disabled)
+void draw_button(BITMAP *bmp, int x, int y, int w, int h, int col, const char *txt, bool selected, bool disabled)
 {
 	int col1 = makecol( minf(255,getr(col)*1.3f), minf(255,getg(col)*1.3f), minf(255,getb(col)*1.3f) );
 	int col2 = makecol( getr(col)*0.7f, getg(col)*0.7f, getb(col)*0.7f );
@@ -185,7 +185,7 @@ void draw_guis(BITMAP *bmp, int col)
 }
 
 
-GUI *add_button(int x, int y, int w, int h, char *txt, int act)
+GUI *add_button(int x, int y, int w, int h, const char *txt, int act)
 {
 	GUI *B = new GUI();
 	B->type = GUI_BUTTON;
@@ -194,7 +194,8 @@ GUI *add_button(int x, int y, int w, int h, char *txt, int act)
 	B->y = y;
 	B->width = w;
 	B->height = h;
-	B->text = txt;
+    B->text[0] = '\0';
+    strcpy(B->text, txt);
 	
 	GUI *G = gui;
 	while(G != NULL)
@@ -210,7 +211,7 @@ GUI *add_button(int x, int y, int w, int h, char *txt, int act)
 }
 
 
-GUI *add_option(int x, int y, int w, int h, char *txt, int act)
+GUI *add_option(int x, int y, int w, int h, const char *txt, int act)
 {
 	GUI *B = new GUI();
 	B->type = GUI_OPTION;
@@ -219,7 +220,8 @@ GUI *add_option(int x, int y, int w, int h, char *txt, int act)
 	B->y = y;
 	B->width = w;
 	B->height = h;
-	B->text = txt;
+    B->text[0] = '\0';
+    strcpy(B->text, txt);
 	
 	GUI *G = gui;
 	while(G != NULL)
@@ -257,13 +259,14 @@ GUI *add_window(int x, int y, int w, int h)
 	return B;
 }
 
-GUI *add_label(int x, int y, char *txt, int col)
+GUI *add_label(int x, int y, const char *txt, int col)
 {
 	GUI *B = new GUI();
 	B->type = GUI_LABEL;
 	B->x = x;
 	B->y = y;
-	B->text = txt;
+    B->text[0] = '\0';
+    strcpy(B->text, txt);
 	B->col = col;
 	
 	GUI *G = gui;
@@ -455,37 +458,37 @@ void update_option(GUI *O)
 {
 	if(O->action == OPTION_DIFFICULTY)
 	{
-		if(config[CFG_DIFFICULTY] == DIFF_EASY)			O->text = "Easy";
-		if(config[CFG_DIFFICULTY] == DIFF_NORMAL)		O->text = "Normal";
-		if(config[CFG_DIFFICULTY] == DIFF_HARD)			O->text = "Hard";
-		if(config[CFG_DIFFICULTY] == DIFF_IMPOSSIBLE)	O->text = "Impossible";
+		if(config[CFG_DIFFICULTY] == DIFF_EASY)			strcpy(O->text, "Easy");
+		if(config[CFG_DIFFICULTY] == DIFF_NORMAL)		strcpy(O->text, "Normal");
+		if(config[CFG_DIFFICULTY] == DIFF_HARD)			strcpy(O->text, "Hard");
+		if(config[CFG_DIFFICULTY] == DIFF_IMPOSSIBLE)	strcpy(O->text, "Impossible");
 	}
 	else if(O->action == OPTION_MOUSEWHEEL)
 	{
-		if(config[CFG_MOUSE_WHEEL] == 0)	O->text = "Disabled";
-		if(config[CFG_MOUSE_WHEEL] == 1)	O->text = "Enabled";
+		if(config[CFG_MOUSE_WHEEL] == 0)	strcpy(O->text, "Disabled");
+		if(config[CFG_MOUSE_WHEEL] == 1)	strcpy(O->text, "Enabled");
 	}
 	else if(O->action == OPTION_CONTROLSTYLE)
 	{
-		if(config[CFG_ABSOLUTE_CONTROL] == 0)	O->text = "Relative";
-		if(config[CFG_ABSOLUTE_CONTROL] == 1)	O->text = "Absolute";
+		if(config[CFG_ABSOLUTE_CONTROL] == 0)	strcpy(O->text, "Relative");
+		if(config[CFG_ABSOLUTE_CONTROL] == 1)	strcpy(O->text, "Absolute");
 	}
 	else if(O->action == OPTION_SOUNDVOLUME)
 	{
 		int vol = (float(config[CFG_SFX_VOLUME]) / 250.0f) * 100.0f;
 		switch(vol)
 		{
-			case 0: O->text = "0%"; break;
-			case 10: O->text = "10%"; break;
-			case 20: O->text = "20%"; break;
-			case 30: O->text = "30%"; break;
-			case 40: O->text = "40%"; break;
-			case 50: O->text = "50%"; break;
-			case 60: O->text = "60%"; break;
-			case 70: O->text = "70%"; break;
-			case 80: O->text = "80%"; break;
-			case 90: O->text = "90%"; break;
-			case 100: O->text = "100%"; break;
+			case 0: strcpy(O->text, "0%"); break;
+			case 10: strcpy(O->text, "10%"); break;
+			case 20: strcpy(O->text, "20%"); break;
+			case 30: strcpy(O->text, "30%"); break;
+			case 40: strcpy(O->text, "40%"); break;
+			case 50: strcpy(O->text, "50%"); break;
+			case 60: strcpy(O->text, "60%"); break;
+			case 70: strcpy(O->text, "70%"); break;
+			case 80: strcpy(O->text, "80%"); break;
+			case 90: strcpy(O->text, "90%"); break;
+			case 100: strcpy(O->text, "100%"); break;
 		}
 	}
 	else if(O->action == OPTION_MUSICVOLUME)
@@ -493,44 +496,44 @@ void update_option(GUI *O)
 		int vol = (float(config[CFG_MUSIC_VOLUME]) / 250.0f) * 100.0f;
 		switch(vol)
 		{
-			case 0: O->text = "0%"; break;
-			case 10: O->text = "10%"; break;
-			case 20: O->text = "20%"; break;
-			case 30: O->text = "30%"; break;
-			case 40: O->text = "40%"; break;
-			case 50: O->text = "50%"; break;
-			case 60: O->text = "60%"; break;
-			case 70: O->text = "70%"; break;
-			case 80: O->text = "80%"; break;
-			case 90: O->text = "90%"; break;
-			case 100: O->text = "100%"; break;
+			case 0: strcpy(O->text, "0%"); break;
+			case 10: strcpy(O->text, "10%"); break;
+			case 20: strcpy(O->text, "20%"); break;
+			case 30: strcpy(O->text, "30%"); break;
+			case 40: strcpy(O->text, "40%"); break;
+			case 50: strcpy(O->text, "50%"); break;
+			case 60: strcpy(O->text, "60%"); break;
+			case 70: strcpy(O->text, "70%"); break;
+			case 80: strcpy(O->text, "80%"); break;
+			case 90: strcpy(O->text, "90%"); break;
+			case 100: strcpy(O->text, "100%"); break;
 		}
 	}
 	else if(O->action == OPTION_FULLSCREEN)
 	{
 		if(config[CFG_FULLSCREEN])
-			O->text = "Fullscreen";
+			strcpy(O->text, "Fullscreen");
 		else
-			O->text = "Windowed";
+			strcpy(O->text, "Windowed");
 	}
 	else if(O->action == OPTION_BLENDING)
 	{
 		if(config[CFG_PARTICLE_BLENDING])
-			O->text = "Alpha Blending";
+			strcpy(O->text, "Alpha Blending");
 		else
-			O->text = "Solid Fill";
+			strcpy(O->text, "Solid Fill");
 	}
 	else if(O->action == OPTION_MEMBRANES)
 	{
 		if(config[CFG_SHOW_MEMBRANES])
-			O->text = "Enabled";
+			strcpy(O->text, "Enabled");
 		else
-			O->text = "Disabled";
+			strcpy(O->text, "Disabled");
 	}
 	else if(O->action == OPTION_LIGHTFLASHES)
 	{
-		if(config[CFG_LIGHT_FLASHES] == 0)	O->text = "Disabled";
-		if(config[CFG_LIGHT_FLASHES] == 1)	O->text = "Enabled";
+		if(config[CFG_LIGHT_FLASHES] == 0)	strcpy(O->text, "Disabled");
+		if(config[CFG_LIGHT_FLASHES] == 1)	strcpy(O->text, "Enabled");
 	}
 }
 
@@ -591,7 +594,7 @@ void default_config()
 }
 
 
-int cfg_from_string(char *val)
+int cfg_from_string(const char *val)
 {
 	if(!strcmp(val,"AbsoluteControl")) return CFG_ABSOLUTE_CONTROL;
 	if(!strcmp(val,"UseMouseWheel")) return CFG_MOUSE_WHEEL;

@@ -46,7 +46,7 @@ struct GUI
 	int action;
 	int x, y;
 	int width, height;
-	char *text;
+	char text[256];
 	int col;
 
 	GUI *next;
@@ -54,20 +54,20 @@ struct GUI
 
 
 void draw_window(BITMAP *bmp, int x, int y, int w, int h, int col);
-void draw_button(BITMAP *bmp, int x, int y, int w, int h, int col, char *txt, bool selected, bool disabled);
+void draw_button(BITMAP *bmp, int x, int y, int w, int h, int col, const char *txt, bool selected, bool disabled);
 void draw_guis(BITMAP *bmp, int col);
 GUI *add_window(int x, int y, int w, int h);
-GUI *add_button(int x, int y, int w, int h, char *txt, int act);
-GUI *add_label(int x, int y, char *txt, int col=makecol(255,255,255));
-GUI *add_option(int x, int y, int w, int h, char *txt, int act);
-void update_label(GUI *label, char *txt);
+GUI *add_button(int x, int y, int w, int h, const char *txt, int act);
+GUI *add_label(int x, int y, const char *txt, int col=makecol(255,255,255));
+GUI *add_option(int x, int y, int w, int h, const char *txt, int act);
+void update_label(GUI *label, const char *txt);
 void click_button(GUI *B);
 void remove_gui(GUI *B);
 void clear_gui();
 void draw_outline(BITMAP *bmp, int x, int y, int w, int h, int col);
 
 void default_config();
-int cfg_from_string(char *val);
+int cfg_from_string(const char *val);
 bool load_config();
 bool save_config();
 

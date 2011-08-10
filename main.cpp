@@ -751,14 +751,14 @@ void draw_game()
 		{
 			if(shipdata[s-1].owned)
 			{
-				if(s == 1) ship_label->text = "Fighter X-11";
-				if(s == 2) ship_label->text = "Crimson Wing";
-				if(s == 3) ship_label->text = "Indigo Avenger";
-				if(s == 4) ship_label->text = "Juggernaut";
-				if(s == 5) ship_label->text = "Doubleheader";
+				if(s == 1) strcpy(ship_label->text, "Fighter X-11");
+				if(s == 2) strcpy(ship_label->text, "Crimson Wing");
+				if(s == 3) strcpy(ship_label->text, "Indigo Avenger");
+				if(s == 4) strcpy(ship_label->text, "Juggernaut");
+				if(s == 5) strcpy(ship_label->text, "Doubleheader");
 			}
 			else
-				ship_label->text = "Not Unlocked";
+				strcpy(ship_label->text, "Not Unlocked");
 		}
 
 		// Draw rating bars (thrust, top-speed, hull strength, ammo regeneration rate)
@@ -945,9 +945,9 @@ void draw_hud()
         case WEAPON_BLASTER:
 		{
             col = makecol(0,255,170);
-            name = "Blaster";
+            strcpy(name, "Blaster");
 			if(player->playerdata.shiptype == SHIP_DOUBLEHEADER)
-				name = "2x Blasters";
+				strcpy(name, "2x Blasters");
 			float per = 1 - (float)weapons[0].waitcount / (float)weapons[0].firerate;
 			if(absf(weapons[0].waitcount-weapons[0].firerate) < 9)
 			{
@@ -964,11 +964,11 @@ void draw_hud()
         case WEAPON_MACHINEGUNS:
 		{
             col = makecol(120,120,120);
-            name = "MachineGuns";
+            strcpy(name, "MachineGuns");
 			if(player->playerdata.shiptype == SHIP_JUGGERNAUT)
-				name = "Minigun";
+				strcpy(name, "Minigun");
 			if(player->playerdata.shiptype == SHIP_DOUBLEHEADER)
-				name = "2x Miniguns";
+				strcpy(name, "2x Miniguns");
 			int clips = weapons[WEAPON_MACHINEGUNS].ammo / 50;
 			int rounds = weapons[WEAPON_MACHINEGUNS].ammo % 50;
 			if(weapons[WEAPON_MACHINEGUNS].ammo == weapons[WEAPON_MACHINEGUNS].maxammo)
@@ -988,7 +988,7 @@ void draw_hud()
         case WEAPON_MISSILE:
 		{
             col = makecol(225,225,0);
-            name = "Missiles";
+            strcpy(name, "Missiles");
 			if(player->playerdata.shiptype == SHIP_DOUBLEHEADER)
 				col = makecol(255,200,0);
 			if(player->playerdata.shiptype == SHIP_JUGGERNAUT)
@@ -1009,7 +1009,7 @@ void draw_hud()
         case WEAPON_LASER:
 		{
             col = makecol(255,0,0);
-            name = "Laser";
+            strcpy(name, "Laser");
 			if(player->playerdata.shiptype == SHIP_INDIGOAVENGER)
 				col = makecol(255,0,255);
 			float per = maxf(0.1f, (float)weapons[WEAPON_LASER].ammo / (float)weapons[WEAPON_LASER].maxammo);
@@ -1024,10 +1024,10 @@ void draw_hud()
         case WEAPON_FREEZE_BOMB:
 		{
             col = makecol(0,170,255);
-            name = "Freeze Bomb";
+            strcpy(name, "Freeze Bomb");
 			if(player->playerdata.shiptype == SHIP_CRIMSONWING)
 			{
-				name = "Fire Bomb";
+				strcpy(name, "Fire Bomb");
 				col = makecol(255,190,0);
 			}
 			int x = 153;
@@ -1918,11 +1918,11 @@ void create_ship_gain(int s)
 	add_label(320, 200, "The", makecol(255,255,255));
 	char* buf;
 	int col = makecol(255,255,255);
-	if(s == 2) { buf = "Crimson Wing"; col = makecol(255,64,64); }
-	else if(s == 3) { buf = "Indigo Avenger"; col = makecol(255,64,255); }
-	else if(s == 4) { buf = "Juggernaut"; col = makecol(32,170,32); }
-	else if(s == 5) { buf = "Doubleheader"; col = makecol(200,180,32); }
-	else buf = "Enigma Ship";
+	if(s == 2) { strcpy(buf, "Crimson Wing"); col = makecol(255,64,64); }
+	else if(s == 3) { strcpy(buf, "Indigo Avenger"); col = makecol(255,64,255); }
+	else if(s == 4) { strcpy(buf, "Juggernaut"); col = makecol(32,170,32); }
+	else if(s == 5) { strcpy(buf, "Doubleheader"); col = makecol(200,180,32); }
+	else strcpy(buf, "Enigma Ship");
 	add_label(320, 215, buf, col);
 	add_label(320, 230, "is now under your command!", makecol(255,255,255));
 
