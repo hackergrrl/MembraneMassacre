@@ -773,23 +773,24 @@ void draw_game()
 			start_button->disabled = true;
 		}
 		else start_button->disabled = false;
-		draw_rating_bars(60, 200, tr);
-		draw_rating_bars(60, 300, hr);
-		draw_rating_bars(220, 200, sr);
-		draw_rating_bars(220, 300, ar);
+        int x = SCREEN_W/2;
+		draw_rating_bars(x-260, 200, tr);
+		draw_rating_bars(x-260, 300, hr);
+		draw_rating_bars(x-100, 200, sr);
+		draw_rating_bars(x-100, 300, ar);
 
 		// Draw ship portrait
 		BITMAP *tmp = generate_ship_portrait(s, rcount, true);
-		draw_sprite(backbuffer, tmp, 400,190);
+		draw_sprite(backbuffer, tmp, x+80,190);
 		destroy_bitmap(tmp);
 
 		// Draw notches along the bottom of the portrait for reference of ship
 		for(int a=0; a < 5; a++)
 		{
-			int x1 = 415+30*a;
+			int x1 = x+95+30*a;
 			int y1 = 355;
 			int y2 = 355+18;
-			int x2 = 415+18+30*a;
+			int x2 = x+95+18+30*a;
 			int col1 = gui_colour;
 			if(!shipdata[a].owned)
 				col1 = makecol(128,128,128);
@@ -1688,19 +1689,20 @@ void create_shipselect()
     const int WIN_WIDTH = 580;
 	add_window(SCREEN_W/2-WIN_WIDTH/2,90, WIN_WIDTH,380);
 
-	add_label(315, 110, "Ship Selection", makecol(255,255,0));
-	add_label(315, 118, "_____________________", makecol(200,200,0));
+    int x = SCREEN_W/2;
+	add_label(x, 110, "Ship Selection", makecol(255,255,0));
+	add_label(x, 118, "_____________________", makecol(200,200,0));
 	
-	add_label(80, 170, "Thrust", makecol(255,255,255));
-	add_label(255, 170, "Top Speed", makecol(255,255,255));
-	add_label(110, 270, "Hull Strength", makecol(255,255,255));
-	add_label(265, 270, "Ammo Regen.", makecol(255,255,255));
+	add_label(x-240, 170, "Thrust", makecol(255,255,255));
+	add_label(x-65, 170, "Top Speed", makecol(255,255,255));
+	add_label(x-220, 270, "Hull Strength", makecol(255,255,255));
+	add_label(x-55, 270, "Ammo Regen.", makecol(255,255,255));
 
-	ship_label = add_label(480, 170, "Ship Name", makecol(255,255,255));
-	add_label(480, 176, "______________", makecol(200,200,200));
+	ship_label = add_label(x+160, 170, "Ship Name", makecol(255,255,255));
+	add_label(x+160, 176, "______________", makecol(200,200,200));
 
-	start_button = add_button(235, 295, 160,25, "Start Game", ACTION_NEWGAME);
-	add_option(315,435, 420,15, "Previous                   Next", OPTION_SHIPSELECT);
+	start_button = add_button(x-85, 375, 160,25, "Start Game", ACTION_NEWGAME);
+	add_option(x-5,435, 420,15, "Previous                   Next", OPTION_SHIPSELECT);
 	cur_menu = 4;
 }
 
