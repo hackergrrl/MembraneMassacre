@@ -1580,7 +1580,7 @@ void action_shipselect()
 
 void create_main_menu()
 {
-	int y = 65;
+	int y = 85;
     const int WIN_WIDTH = 350;//SCREEN_W * 0.73f;
     const int WIN_HEIGHT = SCREEN_H * 0.52f;
 
@@ -1590,9 +1590,9 @@ void create_main_menu()
     }
 	int BUTTON_SPACING = WIN_HEIGHT / numButtons - 3;
 
-	add_window(SCREEN_W/2-WIN_WIDTH/2,y+20, WIN_WIDTH,WIN_HEIGHT);
+	add_window(SCREEN_W/2-WIN_WIDTH/2,y, WIN_WIDTH,WIN_HEIGHT);
 
-    y += 30;
+    y += WIN_HEIGHT / 20;
 	int button_x = SCREEN_W/2 - 200/2;
 	if(game_state == STATE_GAME)
 	{
@@ -1615,37 +1615,45 @@ void create_main_menu()
 void create_options_menu()
 {
 	int y = 85;
-	int s = 33;
-	add_window(50,y, 540,385);
+    const int WIN_WIDTH = 540;
+    const int WIN_HEIGHT = 385;
+    int x = SCREEN_W/2 - WIN_WIDTH/2;
+	add_window(x,y, WIN_WIDTH,WIN_HEIGHT);
 
-	add_option(475,y+30, 150,15, "Normal", OPTION_DIFFICULTY);
-	add_label(190,y+30+5, "Difficulty Level");
+    const int numButtons = 9;
+    const int labelX = SCREEN_W/2 - 140;
+    const int optionX = SCREEN_W/2 + 145;
+	int s = (WIN_HEIGHT-20-60) / numButtons;
+
+    y += 35;
+	add_option(optionX,y, 150,15, "Normal", OPTION_DIFFICULTY);
+	add_label(labelX,y, "Difficulty Level");
 	
-	add_option(475,y+30+35, 150,15, "Relative", OPTION_CONTROLSTYLE);
-	add_label(190,y+30+s+5, "Ship Control Style");
+	add_option(optionX,y+s, 150,15, "Relative", OPTION_CONTROLSTYLE);
+	add_label(labelX,y+s, "Ship Control Style");
 
-	add_option(475,y+30+35*2, 150,15, "Enabled", OPTION_MOUSEWHEEL);
-	add_label(190,y+30+s*2+5, "Mouse-Wheel Weapon Select");
+	add_option(optionX,y+s*2, 150,15, "Enabled", OPTION_MOUSEWHEEL);
+	add_label(labelX,y+s*2, "Mouse-Wheel Weapon Select");
 
-	add_option(475,y+30+35*3, 150,15, "50%", OPTION_SOUNDVOLUME);
-	add_label(190,y+30+s*3+5, "Sound Volume");
+	add_option(optionX,y+s*3, 150,15, "50%", OPTION_SOUNDVOLUME);
+	add_label(labelX,y+s*3, "Sound Volume");
 	
-	add_option(475,y+30+35*4, 150,15, "50%", OPTION_MUSICVOLUME);
-	add_label(190,y+30+s*4+5, "Music Volume");
+	add_option(optionX,y+s*4, 150,15, "50%", OPTION_MUSICVOLUME);
+	add_label(labelX,y+s*4, "Music Volume");
 
-	add_option(475,y+30+35*5, 150,15, "Fullscreen", OPTION_FULLSCREEN);
-	add_label(190,y+30+s*5+5, "Window Mode");
+	add_option(optionX,y+s*5, 150,15, "Fullscreen", OPTION_FULLSCREEN);
+	add_label(labelX,y+s*5, "Window Mode");
 
-	add_option(475,y+30+35*6, 150,15, "Enabled", OPTION_BLENDING);
-	add_label(190,y+30+s*6+5, "Particle Blending");
+	add_option(optionX,y+s*6, 150,15, "Enabled", OPTION_BLENDING);
+	add_label(labelX,y+s*6, "Particle Blending");
 
-	add_option(475,y+30+35*7, 150,15, "Enabled", OPTION_MEMBRANES);
-	add_label(190,y+30+s*7+5, "Translucent Membranes");
+	add_option(optionX,y+s*7, 150,15, "Enabled", OPTION_MEMBRANES);
+	add_label(labelX,y+s*7, "Translucent Membranes");
 
-	add_option(475,y+30+35*8, 150,15, "Enabled", OPTION_LIGHTFLASHES);
-	add_label(190,y+30+s*8+5, "Light Flashes");
+	add_option(optionX,y+s*8, 150,15, "Enabled", OPTION_LIGHTFLASHES);
+	add_label(labelX,y+s*8, "Light Flashes");
 
-	add_button(210, y+30+s*9+18, 220,25, "Return to Main Menu", ACTION_RETURNMENU);
+	add_button(SCREEN_W/2-220/2, y+s*9+12, 220,25, "Return to Main Menu", ACTION_RETURNMENU);
 
 	cur_menu = 2;
 }
@@ -1677,7 +1685,8 @@ void create_credits()
 void create_shipselect()
 {
 	int y = 125;
-	add_window(35,90, 560,380);
+    const int WIN_WIDTH = 580;
+	add_window(SCREEN_W/2-WIN_WIDTH/2,90, WIN_WIDTH,380);
 
 	add_label(315, 110, "Ship Selection", makecol(255,255,0));
 	add_label(315, 118, "_____________________", makecol(200,200,0));
