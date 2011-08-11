@@ -1602,7 +1602,7 @@ void create_main_menu()
 	}
 	add_button(button_x,y, 200,24, "New Game", ACTION_SHIPSELECT_STORY);
 	add_button(button_x,y+BUTTON_SPACING, 200,24, "Survival Mode", ACTION_SHIPSELECT_SURVIVAL);
-	add_button(button_x,y+BUTTON_SPACING, 200,24, "Infinite Dungeon", 0)->disabled = true;
+	//add_button(button_x,y+BUTTON_SPACING, 200,24, "Infinite Dungeon", 0)->disabled = true;
 	add_button(button_x,y+BUTTON_SPACING*2, 200,24, "Game Options", ACTION_OPTIONS);
 	add_button(button_x,y+BUTTON_SPACING*3, 200,24, "Credits", ACTION_CREDITS);
 	add_button(button_x,y+BUTTON_SPACING*4, 200,24, "Exit", ACTION_EXIT);
