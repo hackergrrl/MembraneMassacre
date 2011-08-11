@@ -1096,7 +1096,7 @@ void draw_hud()
 			sprintf(info, "%d:0%d", mins, secs);
 		else
 			sprintf(info, "%d:%d", mins, secs);
-		textprintf_ex(backbuffer, font2, 410,SCREEN_H-24, makecol(255,255,255), -1, info);
+		textprintf_ex(backbuffer, font2, 410,SCREEN_H-24, makecol(255,255,255), -1, "%s", info);
 		float per = ((float)(wave_survive_time/1000.0f*60) / (float)wave_duration) * 150;
 		for(int a=0; a < per; a += 2)
 		{

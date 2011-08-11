@@ -101,7 +101,7 @@ bool remove_sprite(SPRITE *S, SPRITE *cur)
 
 void draw_sprite(SPRITE *S)
 {
-    if(S == NULL || S->type == -1)
+    if(S == NULL || S->type == 0)
         return;
         
 	if( absf(mapx - (int)S->x) < SCREEN_W*1.5 && absf(mapy - (int)S->y) < SCREEN_H*1.5 )
