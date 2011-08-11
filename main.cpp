@@ -439,8 +439,8 @@ bool init_game()
 	if(config[CFG_FULLSCREEN])
 	    set_gfx_mode(GFX_AUTODETECT, 480, 320, 0,0);
 	else
-		set_gfx_mode(GFX_AUTODETECT_WINDOWED, 480, 320, 0,0);
-		//set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0,0);
+		//set_gfx_mode(GFX_AUTODETECT_WINDOWED, 480, 320, 0,0);
+		set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0,0);
 	set_window_title("Membrane Massacre :: v2.5");
 
 	font2 = load_font("data/font.pcx", NULL, NULL);
