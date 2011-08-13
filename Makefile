@@ -32,7 +32,7 @@ LIBS := ${LIBS} `allegro-config --static`
 	${COMPILER} -c ${INCDIR} ${COMPILER_FLAGS} $<
 
 game: ${OBJS}
-	${COMPILER} -o ${TARGET} -arch i386 ${LIBDIR} ${LIBS} ${OBJS}
+	${COMPILER} -o ${TARGET} ${COMPILER_FLAGS} ${LIBDIR} ${LIBS} ${OBJS}
 
 all: ${TARGET}
 
