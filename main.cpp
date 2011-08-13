@@ -95,9 +95,14 @@ long last=0;
 
 long timeGetTime()
 {
+    //timespec ts;
+    // clock_gettime(CLOCK_MONOTONIC, &ts); // Works on FreeBSD
+    //clock_gettime(CLOCK_REALTIME, &ts); // Works on Linux
+    //return (ts.tv_sec / 1000) + (ts.tv_nsec / 1000000);
+
 	timeval time;
 	gettimeofday(&time, NULL);
-	return time.tv_usec * 1000 + time.tv_sec / 1000;
+	return time.tv_usec / 1000 + time.tv_sec * 1000;
 }
 
 bool FSOUND_IsPlaying(int id)
