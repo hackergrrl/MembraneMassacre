@@ -356,7 +356,7 @@ void click_button(GUI *B)
 
 		case OPTION_DIFFICULTY:
 		{
-			if(B->text == ">")
+			if(!strcmp(B->text, ">"))
 			{
 				config[CFG_DIFFICULTY]++;
 				if(config[CFG_DIFFICULTY] > DIFF_IMPOSSIBLE)
@@ -382,7 +382,7 @@ void click_button(GUI *B)
 		}
 		case OPTION_SOUNDVOLUME:
 		{
-			if(B->text == ">")
+			if(!strcmp(B->text, ">"))
 			{
 				if(config[CFG_SFX_VOLUME] < 250)
 					config[CFG_SFX_VOLUME] += 25;
@@ -396,7 +396,7 @@ void click_button(GUI *B)
 		}
 		case OPTION_MUSICVOLUME:
 		{
-			if(B->text == ">")
+			if(!strcmp(B->text, ">"))
 			{
 				if(config[CFG_MUSIC_VOLUME] < 250)
 					config[CFG_MUSIC_VOLUME] += 25;
@@ -431,7 +431,7 @@ void click_button(GUI *B)
 		}
 		case OPTION_SHIPSELECT:
 		{
-			if(B->text == ">")
+			if(!strcmp(B->text, ">"))
 			{
 				player->playerdata.shiptype++;
 				if(player->playerdata.shiptype > 5)
