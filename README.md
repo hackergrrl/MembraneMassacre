@@ -11,4 +11,7 @@ Initially developed on and for solely Windows, my current goal is to get the cam
 
 After the basic game functionality is present on all three platforms, the next step will be to move the game's renderer from Allegro 4.2 (software renderer) to either Allegro 5 or SDL/OpenGL -- both provide a means to interfacing with OpenGL, which will make the game more portable to the wide variety of mobile platforms via OpenGL ES.
 
+Licence
+=======
+Membrane Massacre's source code and artwork are all released under the [GPLv3](http://www.gnu.org/licenses/gpl.html). If you make use of MM's source or art anywhere, with or without modification, I'd be thrilled to [hear about it](mailto:stephenPOINTwhitmorePOINTgmailPOINTcom).
 
