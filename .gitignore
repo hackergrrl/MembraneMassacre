@@ -2,3 +2,5 @@
 *.o
 *.swp
 game
+*.mode1v3
+*.pbxuser
