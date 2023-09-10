@@ -26,3 +26,8 @@ Licence
 =======
 Membrane Massacre's source code and artwork are all released under the [GPLv3](http://www.gnu.org/licenses/gpl.html). If you make use of MM's source or art anywhere, with or without modification, I'd be thrilled to [hear about it](mailto:stephenPOINTwhitmorePOINTgmailPOINTcom).
 
+Credits
+=======
+Art & Music & Design: Dean Yeats
+Programming & Design: Kira Oakley
+
